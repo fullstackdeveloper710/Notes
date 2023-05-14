@@ -1,0 +1,349 @@
+:root {
+  --primary: #4343cf;
+  --outlineClr: rgb(82, 82, 255);
+  --red: red;
+  --white: white;
+  --gray: #666666;
+  --borderGray: #999999;
+  --hoverBorder: #5d5dee;
+  --hoverBgClr: #bebaba;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.layout {
+  width: 70%;
+}
+
+button[disabled] {
+  border: 1px solid var(--borderGray);
+  background-color: #cccccc;
+  color: var(--gray);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 5%;
+  width: 70%;
+  height: 10vh;
+  margin: 4vh 0;
+}
+
+.header > a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: var(--primary);
+  font-size: 0.9rem;
+  width: 25%;
+  text-align: center;
+  outline-color: var(--outlineClr);
+}
+
+.heading {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.form_group {
+  width: 100%;
+}
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input_group > label {
+  margin-bottom: 10px;
+  color: var(--gray);
+}
+
+.input_field,
+.text_area {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--borderGray);
+  outline-color: var(--outlineClr);
+  border-radius: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--borderGray);
+  background-color: var(--primary);
+  outline-color: var(--outlineClr);
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.rdt_Table {
+  min-height: 50vh;
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+.rdt_TableRow {
+  cursor: pointer;
+}
+.rdt_TableRow:hover {
+  background-color: var(--hoverBgClr);
+}
+.rdt_TableCol {
+  max-width: 200px !important;
+}
+.rdt_TableCell {
+  max-width: 200px !important;
+}
+
+.delete_btn,
+.edit_btn {
+  padding: 5px 10px;
+  border: none;
+  background-color: var(--red);
+  border-radius: 5px;
+  color: var(--white);
+  margin-right: 5px;
+  cursor: pointer;
+  outline-color: var(--outlineClr);
+}
+
+.edit_btn {
+  background-color: var(--primary);
+}
+
+.note_detail {
+  min-height: 50vh;
+}
+
+.note_content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.note_content_first_section,
+.note_content_second_section {
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.note_content_first_section > p,
+.note_content_second_section > p {
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.note_content_first_section > p > span,
+.note_content_second_section > p > span {
+  font-weight: 300;
+  margin-left: 1rem;
+}
+
+.notes > span {
+  font-weight: bold;
+}
+
+.notes_paragaraph {
+  word-break: break-all;
+  white-space: normal;
+  overflow-y: auto;
+  max-height: 200px;
+  width: 100%;
+  font-weight: 300;
+}
+
+.note_content_second_section {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* media querry */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  /* Styles */
+  .header {
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+  .header > a {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .layout {
+    width: 80%;
+  }
+  .note_detail {
+    min-height: 70vh;
+  }
+  
+  .note_content {
+    padding: 25px;
+    height: 100%;
+  }
+  
+  .note_content_first_section,
+  .note_content_second_section {
+   flex-direction: column;
+  }
+  
+  .note_content_first_section > p,
+  .note_content_second_section > p {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  
+  
+  .notes_paragaraph {
+    font-size: 12px;
+  }
+  
+  .note_content_second_section {
+    font-size: 12px;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+/* @media only screen and (min-width: 321px) and (max-width: 768px) {
+  .header {
+    width: 80%;
+    height: fit-content;
+    margin: 5vh 0;
+  }
+
+  .header > a {
+    padding: 20px 15px;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  .heading {
+    padding-top: 1rem;
+  }
+  .layout {
+    width: 80%;
+  }
+  .form_group {
+    width: 100%;
+  }
+
+  .input_group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .input_group > label {
+    font-size: 25px;
+  }
+
+  .input_field,
+  .text_area {
+    font-size: 25px;
+  }
+
+  .btn {
+    font-size: 25px;
+  }
+} */
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+  .header {
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+  .header > a {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .layout {
+    width: 80%;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles */
+  .header {
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+  .header > a {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .layout {
+    width: 80%;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}
